@@ -1,0 +1,129 @@
+Product Evaluation Report: Gorilla Mode (2 Scoops)
+==================================================
+Cost per serving: $3.00
+Total theoretical value: $0.80
+Cost-effectiveness score: 0.27
+(Analyzed 15 of 15 ingredients)
+
+Ingredient Analysis:
+--------------------------------------------------
+
+
+L-Citrulline:
+  Amount: 10000mg
+  Dosage Score: 0.00
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000060
+  Value Contribution: $0.00
+
+
+Creatine Monohydrate:
+  Amount: 5000mg
+  Dosage Score: 1.00
+  Reason: Between minimum and optimal dose
+  Cost/mg: $0.000040
+  Value Contribution: $0.20
+
+
+L-Tyrosine:
+  Amount: 5000mg
+  Dosage Score: 0.00
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000100
+  Value Contribution: $0.00
+
+
+Betaine Anhydrous:
+  Amount: 4000mg
+  Dosage Score: 0.57
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000080
+  Value Contribution: $0.18
+
+
+Glycerol (HydroPrime):
+  Amount: 4000mg
+  Dosage Score: 0.50
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000160
+  Value Contribution: $0.32
+
+
+Malic Acid:
+  Amount: 3000mg
+  Dosage Score: 0.50
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000060
+  Value Contribution: $0.09
+
+
+Alpha-GPC:
+  Amount: 800mg
+  Dosage Score: 0.00
+  Reason: Exceeds maximum safe dose (600mg)
+  Cost/mg: $0.000600
+  Value Contribution: $0.00
+
+
+Caffeine Anhydrous:
+  Amount: 400mg
+  Dosage Score: 0.00
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000500
+  Value Contribution: $0.00
+
+
+Sodium:
+  Amount: 380mg
+  Dosage Score: 0.10
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000001
+  Value Contribution: $0.00
+
+
+Potassium:
+  Amount: 380mg
+  Dosage Score: 0.10
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000016
+  Value Contribution: $0.00
+
+
+Magnesium:
+  Amount: 50mg
+  Dosage Score: 0.75
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000060
+  Value Contribution: $0.00
+
+
+Niacin:
+  Amount: 32mg
+  Dosage Score: 0.20
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000200
+  Value Contribution: $0.00
+
+
+Vitamin B6:
+  Amount: 20mg
+  Dosage Score: 0.00
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.000250
+  Value Contribution: $0.00
+
+
+Vitamin B12:
+  Amount: 0.25mg
+  Dosage Score: 0.50
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.002999
+  Value Contribution: $0.00
+
+
+Huperzine A:
+  Amount: 0.2mg
+  Dosage Score: 0.00
+  Reason: Between optimal and maximum dose
+  Cost/mg: $0.039990
+  Value Contribution: $0.00

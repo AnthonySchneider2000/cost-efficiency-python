@@ -1,0 +1,188 @@
+[
+  {
+    "name": "Example Pre-Workout",
+    "cost": 39.99,
+    "servings": 30,
+    "ingredients": [
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": 200,
+        "unit": "mg"
+      },
+      {
+        "name": "Beta-Alanine",
+        "amount": 3.2,
+        "unit": "g"
+      },
+      {
+        "name": "Creatine Monohydrate",
+        "amount": 5,
+        "unit": "g"
+      }
+    ]
+  },
+  {
+    "name": "Gorilla Mode (1 Scoop)",
+    "cost": 59.99,
+    "servings": 40,
+    "ingredients": [
+      {
+        "name": "L-Citrulline",
+        "amount": 5,
+        "unit": "g"
+      },
+      {
+        "name": "Creatine Monohydrate",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "L-Tyrosine",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "Betaine Anhydrous",
+        "amount": 2,
+        "unit": "g"
+      },
+      {
+        "name": "Glycerol (HydroPrime)",
+        "amount": 2,
+        "unit": "g"
+      },
+      {
+        "name": "Malic Acid",
+        "amount": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "Alpha-GPC",
+        "amount": 400,
+        "unit": "mg"
+      },
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": 200,
+        "unit": "mg"
+      },
+      {
+        "name": "Sodium",
+        "amount": 190,
+        "unit": "mg"
+      },
+      {
+        "name": "Potassium",
+        "amount": 190,
+        "unit": "mg"
+      },
+      {
+        "name": "Magnesium",
+        "amount": 25,
+        "unit": "mg"
+      },
+      {
+        "name": "Niacin",
+        "amount": 16,
+        "unit": "mg"
+      },
+      {
+        "name": "Vitamin B6",
+        "amount": 10,
+        "unit": "mg"
+      },
+      {
+        "name": "Vitamin B12",
+        "amount": 0.125,
+        "unit": "mg"
+      },
+      {
+        "name": "Huperzine A",
+        "amount": 0.1,
+        "unit": "mg"
+      }
+    ]
+  },
+  {
+    "name": "Gorilla Mode (2 Scoops)",
+    "cost": 59.99,
+    "servings": 20,
+    "ingredients": [
+      {
+        "name": "L-Citrulline",
+        "amount": 10,
+        "unit": "g"
+      },
+      {
+        "name": "Creatine Monohydrate",
+        "amount": 5,
+        "unit": "g"
+      },
+      {
+        "name": "L-Tyrosine",
+        "amount": 5,
+        "unit": "g"
+      },
+      {
+        "name": "Betaine Anhydrous",
+        "amount": 4,
+        "unit": "g"
+      },
+      {
+        "name": "Glycerol (HydroPrime)",
+        "amount": 4,
+        "unit": "g"
+      },
+      {
+        "name": "Malic Acid",
+        "amount": 3,
+        "unit": "g"
+      },
+      {
+        "name": "Alpha-GPC",
+        "amount": 800,
+        "unit": "mg"
+      },
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": 400,
+        "unit": "mg"
+      },
+      {
+        "name": "Sodium",
+        "amount": 380,
+        "unit": "mg"
+      },
+      {
+        "name": "Potassium",
+        "amount": 380,
+        "unit": "mg"
+      },
+      {
+        "name": "Magnesium",
+        "amount": 50,
+        "unit": "mg"
+      },
+      {
+        "name": "Niacin",
+        "amount": 32,
+        "unit": "mg"
+      },
+      {
+        "name": "Vitamin B6",
+        "amount": 20,
+        "unit": "mg"
+      },
+      {
+        "name": "Vitamin B12",
+        "amount": 0.25,
+        "unit": "mg"
+      },
+      {
+        "name": "Huperzine A",
+        "amount": 0.2,
+        "unit": "mg"
+      }
+    ]
+  }
+]

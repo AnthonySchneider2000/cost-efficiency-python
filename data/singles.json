@@ -1,0 +1,114 @@
+[
+  {
+    "ingredient_name": "Caffeine Anhydrous",
+    "product_name": "Brand X Caffeine 200mg 100 Tabs",
+    "cost": 9.99,
+    "total_quantity": 20,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Beta-Alanine",
+    "product_name": "Brand Y Beta-Alanine Powder 500g",
+    "cost": 19.99,
+    "total_quantity": 500,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "L-Citrulline",
+    "product_name": "Bulk L-Citrulline Powder",
+    "cost": 29.99,
+    "total_quantity": 500,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Creatine Monohydrate",
+    "product_name": "Bulk Creatine Monohydrate",
+    "cost": 19.99,
+    "total_quantity": 500,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "L-Tyrosine",
+    "product_name": "Bulk L-Tyrosine Powder",
+    "cost": 24.99,
+    "total_quantity": 250,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Betaine Anhydrous",
+    "product_name": "Bulk Betaine Anhydrous",
+    "cost": 19.99,
+    "total_quantity": 250,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Glycerol (HydroPrime)",
+    "product_name": "HydroPrime Glycerol Powder",
+    "cost": 39.99,
+    "total_quantity": 250,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Malic Acid",
+    "product_name": "Bulk Malic Acid Powder",
+    "cost": 14.99,
+    "total_quantity": 250,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Alpha-GPC",
+    "product_name": "Alpha-GPC 50% Powder",
+    "cost": 29.99,
+    "total_quantity": 50,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Sodium",
+    "product_name": "Table Salt (NaCl)",
+    "cost": 0.99,
+    "total_quantity": 737,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Potassium",
+    "product_name": "Potassium Chloride Salt",
+    "cost": 4.99,
+    "total_quantity": 303,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Magnesium",
+    "product_name": "Magnesium Citrate Powder",
+    "cost": 14.99,
+    "total_quantity": 250,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Niacin",
+    "product_name": "Niacin (Vitamin B3) Powder",
+    "cost": 19.99,
+    "total_quantity": 100,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Vitamin B6",
+    "product_name": "Vitamin B6 (Pyridoxine) Powder",
+    "cost": 24.99,
+    "total_quantity": 100,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Vitamin B12",
+    "product_name": "Vitamin B12 (Methylcobalamin) 1% Powder",
+    "cost": 29.99,
+    "total_quantity": 10,
+    "unit": "g"
+  },
+  {
+    "ingredient_name": "Huperzine A",
+    "product_name": "Huperzine A 1% Powder",
+    "cost": 39.99,
+    "total_quantity": 1,
+    "unit": "g"
+  }
+]
