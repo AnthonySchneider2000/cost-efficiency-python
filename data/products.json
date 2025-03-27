@@ -184,5 +184,79 @@
         "unit": "mg"
       }
     ]
+  },
+  {
+    "name": "Total War (1 Scoop)",
+    "cost": 42.99,
+    "servings": 30,
+    "ingredients": [
+      {
+        "name": "L-Citrulline",
+        "amount": 3,
+        "unit": "g"
+      },
+      {
+        "name": "Beta-Alanine",
+        "amount": 3.2,
+        "unit": "g"
+      },
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": 175,
+        "unit": "mg"
+      },
+      {
+        "name": "Malic Acid",
+        "amount": 1,
+        "unit": "g"
+      },
+      {
+        "name": "L-Tyrosine",
+        "amount": 1,
+        "unit": "g"
+      },
+      {
+        "name": "Alpha-GPC",
+        "amount": 200,
+        "unit": "mg"
+      }
+    ]
+  },
+  {
+    "name": "Total War (2 Scoops)",
+    "cost": 42.99,
+    "servings": 15,
+    "ingredients": [
+      {
+        "name": "L-Citrulline",
+        "amount": 6,
+        "unit": "g"
+      },
+      {
+        "name": "Beta-Alanine",
+        "amount": 6.4,
+        "unit": "g"
+      },
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": 350,
+        "unit": "mg"
+      },
+      {
+        "name": "Malic Acid",
+        "amount": 2,
+        "unit": "g"
+      },
+      {
+        "name": "L-Tyrosine",
+        "amount": 2,
+        "unit": "g"
+      },
+      {
+        "name": "Alpha-GPC",
+        "amount": 400,
+        "unit": "mg"
+      }
+    ]
   }
 ]
