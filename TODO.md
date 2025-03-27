@@ -8,9 +8,9 @@ This TODO list tracks completed work and planned enhancements for the Cost-Effec
 - 2025-03-27: Enhanced product evaluation output and added output control options (2e412ff)
 
 ## Immediate Priority
-- [ ] Enhance Output Reporting
-  - [ ] List ingredients skipped due to missing cost data
-  - [ ] List ingredients skipped due to missing dosage data
+- [X] Enhance Output Reporting
+  - [X] List ingredients skipped due to missing cost data
+  - [X] List ingredients skipped due to missing dosage data
 - [ ] Add CSV/Excel Export
   - [ ] Design export format structure
   - [ ] Implement export functionality in product_evaluator.py
