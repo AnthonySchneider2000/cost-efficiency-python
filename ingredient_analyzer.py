@@ -93,7 +93,7 @@ class IngredientAnalyzer:
         max_mg = dosage_info['max_mg']
         
         # Define a small positive score for boundary conditions
-        boundary_score = 0.01 
+        boundary_score = 0.25
 
         if amount_mg < min_mg:
             score = 0.0
