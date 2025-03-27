@@ -92,20 +92,32 @@ class IngredientAnalyzer:
         optimal_mg = dosage_info['optimal_mg']
         max_mg = dosage_info['max_mg']
         
+        # Define a small positive score for boundary conditions
+        boundary_score = 0.01 
+
         if amount_mg < min_mg:
             score = 0.0
             reason = f"Below minimum effective dose ({min_mg}mg)"
+        elif amount_mg == min_mg:
+            score = boundary_score
+            reason = f"At minimum effective dose ({min_mg}mg)"
         elif amount_mg > max_mg:
             score = 0.0
             reason = f"Exceeds maximum safe dose ({max_mg}mg)"
-        elif amount_mg <= optimal_mg:
-            # Linear increase from min to optimal
-            score = (amount_mg - min_mg) / (optimal_mg - min_mg)
-            reason = "Between minimum and optimal dose"
-        else:
-            # Linear decrease from optimal to max
-            score = 1.0 - ((amount_mg - optimal_mg) / (max_mg - optimal_mg))
-            reason = "Between optimal and maximum dose"
+        elif amount_mg == max_mg:
+            score = boundary_score
+            reason = f"At maximum safe dose ({max_mg}mg)"
+        elif amount_mg == optimal_mg:
+            score = 1.0
+            reason = f"At optimal dose ({optimal_mg}mg)"
+        elif amount_mg < optimal_mg: # Between min (exclusive) and optimal (exclusive)
+            # Linear increase from boundary_score at min_mg to 1.0 at optimal_mg
+            score = boundary_score + (1.0 - boundary_score) * (amount_mg - min_mg) / (optimal_mg - min_mg)
+            reason = f"Between minimum ({min_mg}mg) and optimal ({optimal_mg}mg)"
+        else: # Between optimal (exclusive) and max (exclusive)
+            # Linear decrease from 1.0 at optimal_mg to boundary_score at max_mg
+            score = 1.0 - (1.0 - boundary_score) * (amount_mg - optimal_mg) / (max_mg - optimal_mg)
+            reason = f"Between optimal ({optimal_mg}mg) and maximum ({max_mg}mg)"
         
         return DosageScore(
             name=ingredient_name,

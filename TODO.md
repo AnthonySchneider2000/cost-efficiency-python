@@ -3,10 +3,14 @@
 This TODO list tracks completed work and planned enhancements for the Cost-Effectiveness Analyzer project. It serves as a living document to guide development priorities and track progress.
 
 ## Git History
-- 2025-03-26: Project initialization (8ff0127)
-- 2025-03-27: Added new product entries for Total War supplements (69fb9b8)
-- 2025-03-27: Enhanced product evaluation output and added output control options (2e412ff)
-- 2025-03-27: Added CSV export functionality (current work)
+- 2025-03-27: chore: update .gitignore to include additional file patterns for build artifacts and documentation (63be8e0)
+- 2025-03-27: feat: add CSV export functionality for product evaluation results (34cc72e)
+- 2025-03-27: docs: update TODO list to reflect completed enhancements in output reporting (5c530ca)
+- 2025-03-27: docs: update README and TODO with design decisions and project priorities (d6e84c5)
+- 2025-03-27: feat: enhance product evaluation output and add output control options (2e412ff)
+- 2025-03-27: feat: add new product entries for Total War supplements (69fb9b8)
+- 2025-03-26: init (8ff0127)
+
 
 ## Immediate Priority
 - [X] Enhance Output Reporting
@@ -14,8 +18,13 @@ This TODO list tracks completed work and planned enhancements for the Cost-Effec
   - [X] List ingredients skipped due to missing dosage data
 - [X] Add CSV/Excel Export
   - [X] Design export format structure
-  - [X] Implement export functionality in product_evaluator.py
-  - [X] Add export option to main.py interface
+  - [X] Implement export functionality in product_evaluator.py (34cc72e)
+  - [X] Add export option to main.py interface (34cc72e)
+
+## Refinements & Improvements
+- [X] Refine Dosage Scoring Logic (2025-03-27)
+  - [X] Adjust scoring at min/max boundaries
+  - [X] Improve clarity and context of dosage reason strings
 
 ## Code Quality & Testing
 - [ ] Implement Data Validation
