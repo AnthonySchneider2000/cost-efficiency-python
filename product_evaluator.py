@@ -132,12 +132,13 @@ class ProductEvaluator:
             skipped_ingredients=skipped_ingredients
         )
 
-    def format_evaluation_report(self, evaluation: ProductEvaluation) -> str:
+    def format_evaluation_report(self, evaluation: ProductEvaluation, show_ingredients: bool = True) -> str:
         """
         Format the evaluation results into a readable report.
         
         Args:
             evaluation: ProductEvaluation results
+            show_ingredients: Whether to include detailed ingredient analysis in output
             
         Returns:
             Formatted string containing the evaluation report
@@ -150,22 +151,26 @@ class ProductEvaluator:
             f"Cost-effectiveness score: {evaluation.cost_effectiveness_score:.2f}",
             f"(Analyzed {evaluation.analyzed_ingredients} of {evaluation.total_ingredients} ingredients)",
             "",
-            "Ingredient Analysis:",
-            "-" * 50,
-            ""
         ]
-        
-        # Add analyzed ingredients
-        for ingredient in evaluation.ingredients:
+
+        if show_ingredients and evaluation.ingredients:
             lines.extend([
-                f"\n{ingredient.name}:",
-                f"  Amount: {ingredient.amount_mg}mg",
-                f"  Dosage Score: {ingredient.dosage_score.score:.2f}",
-                f"  Reason: {ingredient.dosage_score.reason}",
-                f"  Cost/mg: ${ingredient.cost_per_mg:.6f}",
-                f"  Value Contribution: ${ingredient.value_contribution:.2f}",
+                "Ingredient Analysis:",
+                "-" * 50,
                 ""
             ])
+            
+            # Add analyzed ingredients
+            for ingredient in evaluation.ingredients:
+                lines.extend([
+                    f"\n{ingredient.name}:",
+                    f"  Amount: {ingredient.amount_mg}mg",
+                    f"  Dosage Score: {ingredient.dosage_score.score:.2f}",
+                    f"  Reason: {ingredient.dosage_score.reason}",
+                    f"  Cost/mg: ${ingredient.cost_per_mg:.6f}",
+                    f"  Value Contribution: ${ingredient.value_contribution:.2f}",
+                    ""
+                ])
             
         # Add skipped ingredients if any
         if evaluation.skipped_ingredients:

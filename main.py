@@ -64,6 +64,11 @@ def get_ingredient_filter(product: dict) -> Optional[List[str]]:
 
 def main():
     """Main execution function."""
+    parser = argparse.ArgumentParser(description="Cost-Effectiveness Analyzer")
+    parser.add_argument('--hide-ingredients', action='store_true',
+                      help='Hide detailed ingredient analysis in output')
+    args = parser.parse_args()
+    
     print("Cost-Effectiveness Analyzer")
     print("=" * 50)
     
@@ -95,7 +100,7 @@ def main():
             )
             
             # Display results
-            print("\n" + evaluator.format_evaluation_report(evaluation))
+            print("\n" + evaluator.format_evaluation_report(evaluation, show_ingredients=not args.hide_ingredients))
             
             # Ask to continue
             if input("\nAnalyze another product? (y/n): ").lower() != 'y':

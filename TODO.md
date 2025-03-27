@@ -21,24 +21,10 @@
 - [X] Final Review
 
 ## Phase 4: Data Completion & Enhancement (ACT MODE)
-- [ ] Add cost data for missing ingredients in singles.json
-  - [ ] L-Citrulline
-  - [ ] L-Tyrosine
-  - [ ] Betaine Anhydrous
-  - [ ] Glycerol (HydroPrime)
-  - [ ] Malic Acid
-  - [ ] Alpha-GPC
-  - [ ] Various vitamins and minerals
-  - [ ] Huperzine A
-- [ ] Add dosage data for missing ingredients in dosages.json
-  - [ ] L-Citrulline
-  - [ ] L-Tyrosine
-  - [ ] Betaine Anhydrous
-  - [ ] Glycerol (HydroPrime)
-  - [ ] Malic Acid
-  - [ ] Alpha-GPC
-  - [ ] Various vitamins and minerals
-  - [ ] Huperzine A
+- [X] Add cost data for missing ingredients in singles.json
+- [X] Add dosage data for missing ingredients in dosages.json
 - [ ] Enhance product evaluation output to show:
   - [ ] List of ingredients skipped due to missing cost data
   - [ ] List of ingredients skipped due to missing dosage data
+- [ ] Add output control options:
+  - [ ] Add flag to hide ingredient analysis section
