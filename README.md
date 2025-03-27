@@ -122,6 +122,15 @@ The system consists of three main modules:
 3. `product_evaluator.py`: Combines analyses to generate final evaluations
 4. `main.py`: Provides the command-line interface
 
+## Design Decisions
+
+Several key design choices were made during development to ensure consistency and simplicity. Understanding these is important for future modifications:
+
+-   **Cost Inference Method:** Inferred ingredient costs (`ingredient_analyzer.py`) are calculated using a **quantity-weighted average** based on the `total_quantity` and `cost` from `singles.json`. This approach gives more weight to bulk offerings when determining the cost per unit.
+-   **Dosage Scoring Model:** Ingredient effectiveness (`ingredient_analyzer.py`) is scored using a **piecewise linear model** based on `min`, `optimal`, and `max` dosages defined in `dosages.json`. The score increases linearly from 0 (at `min`) to 1 (at `optimal`), then decreases linearly from 1 (at `optimal`) back to 0 (at `max`). This reflects diminishing returns or potential negative effects above the optimal dose.
+-   **Internal Unit Standardization:** All ingredient amounts and dosage thresholds are standardized to **milligrams (mg)** by `data_loader.py` before analysis. Subsequent calculations rely on this consistent unit.
+-   **Standard Library Dependency:** The project intentionally uses **only the Python standard library** to minimize setup complexity. Introducing external dependencies should be a conscious decision weighed against this initial goal.
+
 ## Limitations
 
 - Relies on available single-ingredient product data for cost inference
