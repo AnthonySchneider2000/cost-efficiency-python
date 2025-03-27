@@ -2,11 +2,12 @@
 Main entry point for the cost-effectiveness analyzer.
 """
 import argparse
-from typing import List, Optional
+import datetime # For default filename timestamp
+from typing import List, Optional, Tuple, Dict # Added Tuple, Dict
 
 from data_loader import DataLoader
 from ingredient_analyzer import IngredientAnalyzer
-from product_evaluator import ProductEvaluator
+from product_evaluator import ProductEvaluator, ProductEvaluation # Added ProductEvaluation
 
 def list_products(products: List[dict]) -> None:
     """Display a numbered list of available products."""
@@ -74,6 +75,7 @@ def main():
     
     # Initialize components
     evaluator = ProductEvaluator()
+    all_evaluation_pairs: List[Tuple[Dict, ProductEvaluation]] = [] # Store results here
     
     try:
         # Load data
@@ -81,6 +83,7 @@ def main():
         products, inferred_costs, dosages = evaluator.load_data()
         
         while True:
+            # --- Analysis Part ---
             # Display available products
             list_products(products)
             
@@ -99,14 +102,52 @@ def main():
                 ingredient_filter
             )
             
+            # Store the result pair
+            all_evaluation_pairs.append((product, evaluation))
+            
             # Display results
             print("\n" + evaluator.format_evaluation_report(evaluation, show_ingredients=not args.hide_ingredients))
             
-            # Ask to continue
-            if input("\nAnalyze another product? (y/n): ").lower() != 'y':
-                break
-                
-        print("\nThank you for using the Cost-Effectiveness Analyzer!")
+            # --- Menu Part ---
+            while True:
+                print("\nOptions:")
+                print("  [A] Analyze another product")
+                print("  [E] Export all results to CSV")
+                print("  [Q] Quit")
+                choice = input("Enter your choice: ").lower()
+
+                if choice == 'a':
+                    break # Break inner loop to continue outer analysis loop
+                elif choice == 'e':
+                    if not all_evaluation_pairs:
+                        print("No results to export yet. Please analyze at least one product.")
+                        continue # Stay in menu loop
+
+                    # Generate default filename with timestamp
+                    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                    default_filename = f"evaluation_results_{timestamp}.csv"
+                    
+                    filename_prompt = f"Enter filename for CSV export (default: {default_filename}): "
+                    filename = input(filename_prompt).strip()
+                    if not filename:
+                        filename = default_filename
+                    
+                    try:
+                        evaluator.export_to_csv(all_evaluation_pairs, filename)
+                        # Stay in menu loop after exporting
+                    except Exception as export_err:
+                        print(f"Error during export: {export_err}")
+                        # Stay in menu loop
+                elif choice == 'q':
+                    print("\nThank you for using the Cost-Effectiveness Analyzer!")
+                    exit(0) # Exit the program directly
+                else:
+                    print("Invalid choice. Please enter A, E, or Q.")
+            
+            # If we broke from inner loop with 'a', the outer loop continues
+            
+        # This part is now unreachable due to exit(0) in the 'q' option
+        # print("\nThank you for using the Cost-Effectiveness Analyzer!")
         
     except FileNotFoundError as e:
         print(f"\nError: Required data file not found: {e}")

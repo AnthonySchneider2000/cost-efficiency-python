@@ -6,15 +6,16 @@ This TODO list tracks completed work and planned enhancements for the Cost-Effec
 - 2025-03-26: Project initialization (8ff0127)
 - 2025-03-27: Added new product entries for Total War supplements (69fb9b8)
 - 2025-03-27: Enhanced product evaluation output and added output control options (2e412ff)
+- 2025-03-27: Added CSV export functionality (current work)
 
 ## Immediate Priority
 - [X] Enhance Output Reporting
   - [X] List ingredients skipped due to missing cost data
   - [X] List ingredients skipped due to missing dosage data
-- [ ] Add CSV/Excel Export
-  - [ ] Design export format structure
-  - [ ] Implement export functionality in product_evaluator.py
-  - [ ] Add export option to main.py interface
+- [X] Add CSV/Excel Export
+  - [X] Design export format structure
+  - [X] Implement export functionality in product_evaluator.py
+  - [X] Add export option to main.py interface
 
 ## Code Quality & Testing
 - [ ] Implement Data Validation

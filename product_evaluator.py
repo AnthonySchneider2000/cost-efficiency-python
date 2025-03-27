@@ -1,6 +1,8 @@
 """
 Module for evaluating product cost-effectiveness in the cost-effectiveness analyzer.
 """
+import csv
+import os
 from typing import Dict, List, Optional, NamedTuple
 from dataclasses import dataclass
 
@@ -196,6 +198,108 @@ class ProductEvaluator:
                 lines.append("")
         
         return "\n".join(lines)
+
+    def export_to_csv(self, evaluation_pairs: List[tuple[Dict, ProductEvaluation]], filepath: str):
+        """
+        Exports the evaluation results to a CSV file.
+
+        Args:
+            evaluation_pairs (List[tuple[Dict, ProductEvaluation]]): A list of tuples,
+                where each tuple contains the original product dictionary and its
+                corresponding ProductEvaluation object.
+            filepath (str): The path to the output CSV file.
+        """
+        if not evaluation_pairs:
+            print("No evaluation results to export.")
+            return
+
+        # Ensure the directory exists
+        output_dir = os.path.dirname(filepath)
+        # Handle case where filepath is just a filename (no directory part)
+        if output_dir and not os.path.exists(output_dir):
+             os.makedirs(output_dir, exist_ok=True)
+
+        # Define header based on the desired output structure
+        header = [
+            'Product Name',
+            'Product Total Cost (£)', # Added currency symbol for clarity
+            'Product Servings',
+            'Product Cost Per Serving (£)', # Added currency symbol
+            'Ingredient Name',
+            'Amount Per Serving (mg)', # Added unit
+            'Unit', # Keep 'Unit' column, populate with 'mg'
+            'Single Ingredient Cost Per mg (£)', # Clarified unit and currency
+            'Ingredient Cost in Product (£)', # Added currency symbol
+            'Dosage Score (Efficiency Rating)', # Renamed for clarity
+            'Dosage Match Reason', # Renamed for clarity
+            'Overall Product Score (Value/Cost)', # Renamed for clarity
+            'Skipped Ingredients' # Renamed, extracted from SkippedIngredient objects
+        ]
+
+        try:
+            with open(filepath, 'w', newline='', encoding='utf-8') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(header)
+
+                for product_dict, evaluation in evaluation_pairs:
+                    # Extract product-level details
+                    product_name = evaluation.name
+                    product_cost = product_dict.get('cost', 'N/A') # Get from original dict
+                    product_servings = product_dict.get('servings', 'N/A') # Get from original dict
+                    product_cost_per_serving = evaluation.cost_per_serving
+                    overall_efficiency = evaluation.cost_effectiveness_score # Use cost_effectiveness_score
+                    # Extract names of skipped ingredients
+                    skipped_ingredients_str = ', '.join([si.name for si in evaluation.skipped_ingredients])
+
+                    evaluated_ingredients_list = evaluation.ingredients
+
+                    if not evaluated_ingredients_list:
+                         # Write a row for the product even if no ingredients were evaluated
+                         writer.writerow([
+                            product_name,
+                            product_cost,
+                            product_servings,
+                            f"{product_cost_per_serving:.2f}" if isinstance(product_cost_per_serving, (int, float)) else 'N/A',
+                            'N/A', # Ingredient Name
+                            'N/A', # Amount Per Serving
+                            'N/A', # Unit
+                            'N/A', # Single Ingredient Cost Per Unit
+                            'N/A', # Ingredient Cost in Product
+                            'N/A', # Dosage Score (Efficiency Rating)
+                            'N/A', # Dosage Match Reason
+                            f"{overall_efficiency:.2f}" if isinstance(overall_efficiency, (int, float)) else 'N/A',
+                            skipped_ingredients_str
+                        ])
+                    else:
+                        # Write a row for each evaluated ingredient
+                        for ing_eval in evaluated_ingredients_list:
+                            cost_per_mg = ing_eval.cost_per_mg
+                            amount_mg = ing_eval.amount_mg
+                            # Calculate cost in product, handle potential errors
+                            cost_in_product = (amount_mg * cost_per_mg) if amount_mg is not None and cost_per_mg is not None else 'N/A'
+
+                            writer.writerow([
+                                product_name,
+                                product_cost,
+                                product_servings,
+                                f"{product_cost_per_serving:.2f}" if isinstance(product_cost_per_serving, (int, float)) else 'N/A',
+                                ing_eval.name,
+                                amount_mg if amount_mg is not None else 'N/A',
+                                'mg', # Unit is always mg based on IngredientEvaluation
+                                f"{cost_per_mg:.6f}" if isinstance(cost_per_mg, (int, float)) else 'N/A', # Single Ingredient Cost Per mg
+                                f"{cost_in_product:.4f}" if isinstance(cost_in_product, (int, float)) else 'N/A', # Ingredient Cost in Product
+                                f"{ing_eval.dosage_score.score:.2f}" if ing_eval.dosage_score else 'N/A', # Dosage Score
+                                ing_eval.dosage_score.reason if ing_eval.dosage_score else 'N/A', # Dosage Match Reason
+                                f"{overall_efficiency:.2f}" if isinstance(overall_efficiency, (int, float)) else 'N/A', # Overall Product Score
+                                skipped_ingredients_str # Skipped ingredients (same for all rows of a product)
+                            ])
+            print(f"Successfully exported results to {filepath}")
+
+        except IOError as e:
+            print(f"Error writing to CSV file {filepath}: {e}")
+        except Exception as e:
+            print(f"An unexpected error occurred during CSV export: {e}")
+
 
 if __name__ == '__main__':
     # Test the evaluator with our example data

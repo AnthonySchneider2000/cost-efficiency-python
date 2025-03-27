@@ -130,6 +130,11 @@ Several key design choices were made during development to ensure consistency an
 -   **Dosage Scoring Model:** Ingredient effectiveness (`ingredient_analyzer.py`) is scored using a **piecewise linear model** based on `min`, `optimal`, and `max` dosages defined in `dosages.json`. The score increases linearly from 0 (at `min`) to 1 (at `optimal`), then decreases linearly from 1 (at `optimal`) back to 0 (at `max`). This reflects diminishing returns or potential negative effects above the optimal dose.
 -   **Internal Unit Standardization:** All ingredient amounts and dosage thresholds are standardized to **milligrams (mg)** by `data_loader.py` before analysis. Subsequent calculations rely on this consistent unit.
 -   **Standard Library Dependency:** The project intentionally uses **only the Python standard library** to minimize setup complexity. Introducing external dependencies should be a conscious decision weighed against this initial goal.
+-   **CSV Export Structure:** The CSV export (`product_evaluator.py`) uses a **denormalized format** where each row represents a product-ingredient combination. This design choice enables:
+    - Easy filtering and analysis in spreadsheet software
+    - Complete ingredient details alongside product context
+    - One-to-many relationship between products and their ingredients
+    - Clear representation of missing/skipped ingredients
 
 ## Limitations
 
@@ -143,7 +148,6 @@ Several key design choices were made during development to ensure consistency an
 - Integration with online price APIs
 - Ingredient synergy scoring
 - Web interface for easier data input
-- Export results to CSV/Excel
 - Market price trend analysis
 
 ## Contributing
